@@ -1,8 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as EC
+# from selenium.webdriver.support.ui import WebDriverWait
 from selenium_stealth import stealth
 import undetected_chromedriver.v2 as uc
 import time
@@ -19,7 +19,7 @@ if __name__ == '__main__':
         options.add_experimental_option("excludeSwitches", ["enable-automation"])
         options.add_experimental_option("useAutomationExtension", False)
         options.add_argument("--disable-blink-features=AutomationControlled")
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         # options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36")
         options.page_load_strategy = 'eager'
 
@@ -40,6 +40,7 @@ if __name__ == '__main__':
 
         # driver.get("https://shop.adidas.co.za/")
         # driver.get("https://nowsecure.nl")
+        # driver.get('https://shop.adidas.co.za/blog/yeezy/')
         with driver:
                 driver.get('https://shop.adidas.co.za/blog/yeezy/')
                 
@@ -47,7 +48,8 @@ if __name__ == '__main__':
         # time.sleep(8)
 
         print("WE IN!")
-        time.sleep(100)
+        time.sleep(30)
+        driver.quit()
         # driver.find_element(by=By.XPATH, value="/html/body/div[3]/div[2]/button[1]").click()
         # time.sleep(0.5)
         # driver.find_element(by=By.XPATH, value='//*[@id="all-men-best"]/div/div[2]/div/div[2]/a/div/button').click()
